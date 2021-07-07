@@ -1,0 +1,162 @@
+PODS:
+  - Alamofire (4.9.1)
+  - AlamofireCoreData (2.0.0):
+    - Alamofire (~> 4.7)
+    - Groot (~> 3.0)
+  - Alertift (4.1.1)
+  - AssistantKit (0.6.1)
+  - baseapp-ios-core-v1 (0.1.25):
+    - baseapp-ios-core-v1/Default (= 0.1.25)
+  - baseapp-ios-core-v1/Default (0.1.25):
+    - Alamofire
+    - Alertift
+    - AssistantKit
+    - CancelForPromiseKit
+    - CancelForPromiseKit/Alamofire
+    - Kingfisher (~> 5.9.0)
+    - PromiseKit
+    - R.swift
+    - RxCocoa
+    - RxSwift
+    - RxSwiftExt
+    - SegueManager/R.swift
+    - SnapKit
+    - SwiftDate
+    - SwiftyBeaver
+  - CancelForPromiseKit (1.1.0):
+    - CancelForPromiseKit/CorePromise (= 1.1.0)
+    - CancelForPromiseKit/Foundation (= 1.1.0)
+  - CancelForPromiseKit/Alamofire (1.1.0):
+    - Alamofire (~> 4.0)
+    - CancelForPromiseKit/CorePromise
+    - PromiseKit/Alamofire (~> 6.0)
+  - CancelForPromiseKit/CorePromise (1.1.0):
+    - PromiseKit/CorePromise (~> 6.0)
+  - CancelForPromiseKit/Foundation (1.1.0):
+    - CancelForPromiseKit/CorePromise
+    - PromiseKit/Foundation (~> 6.0)
+  - Groot (3.0.1):
+    - Groot/Swift (= 3.0.1)
+  - Groot/Swift (3.0.1)
+  - Kingfisher (5.9.0):
+    - Kingfisher/Core (= 5.9.0)
+  - Kingfisher/Core (5.9.0)
+  - OHHTTPStubs (5.2.3):
+    - OHHTTPStubs/Default (= 5.2.3)
+  - OHHTTPStubs/Core (5.2.3)
+  - OHHTTPStubs/Default (5.2.3):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (5.2.3):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (5.2.3):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (5.2.3)
+  - OHHTTPStubs/Swift (5.2.3):
+    - OHHTTPStubs/Core
+  - PromiseKit (6.12.0):
+    - PromiseKit/CorePromise (= 6.12.0)
+    - PromiseKit/Foundation (= 6.12.0)
+    - PromiseKit/UIKit (= 6.12.0)
+  - PromiseKit/Alamofire (6.12.0):
+    - Alamofire (~> 4.0)
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (6.12.0)
+  - PromiseKit/Foundation (6.12.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.12.0):
+    - PromiseKit/CorePromise
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
+  - RxSwiftExt (5.2.0):
+    - RxSwiftExt/Core (= 5.2.0)
+    - RxSwiftExt/RxCocoa (= 5.2.0)
+  - RxSwiftExt/Core (5.2.0):
+    - RxSwift (~> 5.0)
+  - RxSwiftExt/RxCocoa (5.2.0):
+    - RxCocoa (~> 5.0)
+    - RxSwiftExt/Core
+  - SegueManager/iOS (4.2.0)
+  - SegueManager/R.swift (4.2.0):
+    - R.swift.Library
+    - SegueManager/iOS
+  - SnapKit (5.0.1)
+  - SwiftDate (6.1.0)
+  - SwiftyBeaver (1.9.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireCoreData
+  - "baseapp-ios-core-v1 (from `git@bitbucket.org:silverlogic/baseapp-ios-core-v1.git`, branch `0.1.25`)"
+  - CancelForPromiseKit
+  - CancelForPromiseKit/Alamofire
+  - OHHTTPStubs (~> 5.2)
+  - OHHTTPStubs/Swift (~> 5.2)
+  - PromiseKit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireCoreData
+    - Alertift
+    - AssistantKit
+    - CancelForPromiseKit
+    - Groot
+    - Kingfisher
+    - OHHTTPStubs
+    - PromiseKit
+    - R.swift
+    - R.swift.Library
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxSwiftExt
+    - SegueManager
+    - SnapKit
+    - SwiftDate
+    - SwiftyBeaver
+
+EXTERNAL SOURCES:
+  baseapp-ios-core-v1:
+    :branch: 0.1.25
+    :git: "git@bitbucket.org:silverlogic/baseapp-ios-core-v1.git"
+
+CHECKOUT OPTIONS:
+  baseapp-ios-core-v1:
+    :commit: ac6b3e9f66f6bf606accc30448554f2e54e76785
+    :git: "git@bitbucket.org:silverlogic/baseapp-ios-core-v1.git"
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AlamofireCoreData: 3205949bd789c2aa5e1cd8f4d703631c9d7ba09c
+  Alertift: 950483ca193717cc8bb508a7dbbe34f4af321daf
+  AssistantKit: 7dd40c019e9a06e93555ed58498a2d212fcb408d
+  baseapp-ios-core-v1: 2a6d14d1c71a1a0ac5c21a4ec3c723bf96dcfe40
+  CancelForPromiseKit: 753c8798c31519ab324dad33974b7f8e4a92257b
+  Groot: a668afbcf0be88d76c0a26c714cfa4638ceaca66
+  Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
+  OHHTTPStubs: e238cd5b66d8efa51c861db45895de8fe079f4a7
+  PromiseKit: c06835ba442ce5454ce3cdde470232804a6e4ff8
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
+  RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
+  SegueManager: 4f0c9e8237fe4b925129f17964caf81d1d6341bf
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftyBeaver: a1f5691458561414bcfab51874b2b7445451602b
+
+PODFILE CHECKSUM: 589081d7be5cdfda8d42159f9257e65e582ecc16
+
+COCOAPODS: 1.9.1

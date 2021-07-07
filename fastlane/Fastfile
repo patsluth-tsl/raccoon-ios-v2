@@ -1,0 +1,70 @@
+# Customise this file, documentation can be found here:
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# All available actions: https://docs.fastlane.tools/actions
+# can also be listed using the `fastlane actions` command
+
+# This is the minimum version number required.
+# Update this, if you use features of a newer version
+fastlane_version '2.69.2'
+
+default_platform :ios
+
+platform :ios do
+	module SharedValues
+   		SELECTED_BUMP_TYPE = nil
+ 	end
+
+	BUMP_TYPES = [
+		'patch',
+		'minor',
+		'major',
+	].freeze
+
+	# Avaliable Lanes
+
+	desc "Release a new version"
+  	lane :release do |options|
+	    # ensure_git_status_clean
+		# git_branch = 'master'
+	    # ensure_git_branch(branch: git_branch)
+	    # # test
+
+		bump_type = select_bump_type_if_needed(bump_type: options[:bump_type])
+
+		project_dir = File.realdirpath('../')
+		podspec_file = Dir.glob(File.join(project_dir, '*.podspec'))[0]
+
+		version = version_bump_podspec(path: podspec_file, bump_type: bump_type)
+
+		git_origin = sh('git remote', log: false).strip
+		git_branch = sh('git branch --show-current', log: false).strip
+		git_tag_name = '%s' % [version]
+
+		sh('cd %s; git add . > /dev/null' % [project_dir])
+		sh('cd %s; git add -A > /dev/null')
+		sh('cd %s; git commit -m \'%s\' 2> /dev/null; exit 0' % [project_dir, git_tag_name])
+		sh('cd %s; git push %s $s 2> /dev/null; exit 0' % [project_dir, git_origin, git_branch])
+		sh('cd %s; git tag --delete \'%s\' 2> /dev/null; exit 0' % [project_dir, git_tag_name])
+		sh('cd %s; git push --delete %s \'%s\' 2> /dev/null; exit 0' % [project_dir, git_origin, git_tag_name])
+		sh('cd %s; git tag %s > /dev/null' % [project_dir, git_tag_name])
+		sh('cd %s; git push %s --tags > /dev/null' % [project_dir, git_origin])
+  	end
+
+	desc "Select Version bump_type"
+	private_lane :select_bump_type_if_needed do |options|
+		bump_type = options[:bump_type]
+		if bump_type == nil && UI.interactive?
+			bump_type = UI.select 'Select Version Bump Type:', BUMP_TYPES
+		end
+		validate_bump_type(bump_type: bump_type)
+		lane_context[SharedValues::SELECTED_BUMP_TYPE] = bump_type
+	end
+
+	desc "Validate Version bump_type"
+	private_lane :validate_bump_type do |options|
+		bump_type = options[:bump_type] || ''
+		if BUMP_TYPES.include?(bump_type) == false
+			UI.user_error!('Invalid Version Bump Type!: \'%s\' Valid Types: %s' % [bump_type, BUMP_TYPES.join(', ')])
+		end
+	end
+end
